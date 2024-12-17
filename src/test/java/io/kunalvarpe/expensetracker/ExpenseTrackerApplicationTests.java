@@ -1,8 +1,8 @@
 package io.kunalvarpe.expensetracker;
 
-import io.kunalvarpe.expensetracker.domain.expense.model.Category;
-import io.kunalvarpe.expensetracker.infra.expense.out.persistence.postgres.ExpenseEntity;
-import io.kunalvarpe.expensetracker.infra.expense.out.persistence.postgres.ExpenseRepository;
+import io.kunalvarpe.expensetracker.expense.domain.Category;
+import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseEntity;
+import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseRepository;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -28,7 +28,7 @@ class ExpenseTrackerApplicationTests {
 
     @Container
     static PostgreSQLContainer<?> postgreSQLContainer =
-            new PostgreSQLContainer<>(DockerImageName.parse("postgres:14-alpine"));
+            new PostgreSQLContainer<>(DockerImageName.parse("postgres:alpine"));
 
     @BeforeAll
     static void beforeAll() {
@@ -57,17 +57,26 @@ class ExpenseTrackerApplicationTests {
 
     @Test
     void shouldGetAllExpenses() {
-        var expenseBuilder = ExpenseEntity.builder().currency("INR").userId(1);
+        ExpenseEntity e1 = new ExpenseEntity();
+        e1.setName("diwali-shopping");
+        e1.setCategory(Category.SHOPPING);
+        e1.setAmount(499.00);
+        ExpenseEntity e2 = new ExpenseEntity();
+        e2.setName("lunch-at-ab-bbq");
+        e2.setCategory(Category.FOOD);
+        e2.setAmount(1899.00);
+        ExpenseEntity e3 = new ExpenseEntity();
+        e3.setName("Shose");
+        e3.setCategory(Category.SHOPPING);
+        e3.setAmount(799.00);
 
-        var expenses = List.of(
-                expenseBuilder.name("diwali-shopping").category(Category.SHOPPING).amount(499.00).build(),
-                expenseBuilder.name("lunch-at-ab-bbq").category(Category.FOOD).amount(1899.00).build(),
-                expenseBuilder.name("Shose").category(Category.SHOPPING).amount(799.00).build()
-        );
+        var expenses = List.of(e1, e2, e3);
 
         expenseRepository.saveAll(expenses);
 
-        var expensesList = expenseRepository.findByUserId(1);
+        expenseRepository.findAll().forEach(System.out::println);
+
+        var expensesList = expenseRepository.findByCreatedBy("d3dfaa27-d47e-4e5f-808f-25afdbf7016b");
         assertThat(expensesList)
                 .isNotEmpty()
                 .hasSize(3);

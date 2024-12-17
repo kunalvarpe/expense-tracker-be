@@ -1,8 +1,9 @@
-INSERT INTO user_info(first_name, last_name) VALUES ('Kunal', 'Varpe');
+INSERT INTO user_info(id, first_name, last_name, email,created_by,created_at)
+VALUES ('d3dfaa27-d47e-4e5f-808f-25afdbf7016b','Kunal', 'Varpe', 'kvvarpe@gamil.com', 'd3dfaa27-d47e-4e5f-808f-25afdbf7016b', now());
 
-INSERT INTO expenses (name, category, created_at, amount, currency, user_id)
-VALUES ('Vegetables and fruits', 'HOUSING', now(), 200.00, 'INR', 1),
-('Trip to Mahabaleshwar', 'TRANSPORTATION', now(), 10000.00, 'INR', 1),
-('Insurance Premium', 'HEALTH', now(), 4321.00, 'INR', 1),
-('Dinner for two people', 'FOOD', now(), 200.00, 'INR', 1),
-('Balaji Traders grocery ', 'HOUSING', now(), 8845.00, 'INR', 1);
+INSERT INTO expenses (name, category, amount, currency, created_by, created_at)
+VALUES ('Vegetables and fruits', 'HOUSING', 200.00, 'INR', 'd3dfaa27-d47e-4e5f-808f-25afdbf7016b', now()),
+('Trip to Mahabaleshwar', 'TRANSPORTATION', 10000.00, 'INR', 'd3dfaa27-d47e-4e5f-808f-25afdbf7016b', now()),
+('Insurance Premium', 'HEALTH', 4321.00, 'INR', 'd3dfaa27-d47e-4e5f-808f-25afdbf7016b', now()),
+('Dinner for two people', 'FOOD', 200.00, 'INR', 'd3dfaa27-d47e-4e5f-808f-25afdbf7016b', now()),
+('Balaji Traders grocery ', 'HOUSING', 8845.00, 'INR', 'd3dfaa27-d47e-4e5f-808f-25afdbf7016b', now());

@@ -13,8 +13,15 @@ spring:
     defer-datasource-initialization: true
     database-platform: postgres
     show-sql: true
+    properties:
+      hibernate:
+        show_sql: true
   output:
     ansi:
       enabled: always
   main:
     lazy-initialization: true
+
+logging:
+  level:
+    org.springframework.jdbc.core: TRACE
