@@ -5,7 +5,8 @@ import lombok.Builder;
 @Builder
 public record ExpenseInsight(
         String id,
-        double value,
+        double amount,
+        String currency,
         String category
 ) {
 }

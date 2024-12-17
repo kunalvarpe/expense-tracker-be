@@ -28,26 +28,27 @@ public class ExpenseService implements ExpenseTrackerUseCase {
         List<Expense> expenses = expensePersistence.findExpensesByUser(userId);
         Month currentMonth = LocalDate.now().getMonth();
 
+        String currency = expenses.stream().map(Expense::currency).findFirst().orElse("INR");
         Optional<Double> totalExpense = expenses.stream()
                 .map(Expense::amount)
                 .reduce(Double::sum);
-        ExpenseInsight.ExpenseInsightBuilder builder = ExpenseInsight.builder();
-        expenseInsights.add(builder.id("totalExpense").value(totalExpense.orElse(0.0)).build());
+        ExpenseInsight.ExpenseInsightBuilder builder = ExpenseInsight.builder().currency(currency);
+        expenseInsights.add(builder.id("totalExpense").amount(totalExpense.orElse(0.0)).build());
 
         Optional<Double> currentExpense = expenses.stream()
                 .filter(expense -> currentMonth == expense.createdAt().getMonth())
                 .map(Expense::amount)
                 .reduce(Double::sum);
-        expenseInsights.add(builder.id("currentExpense").value(currentExpense.orElse(0.0)).build());
+        expenseInsights.add(builder.id("currentExpense").amount(currentExpense.orElse(0.0)).build());
 
         Optional<Expense> maxExpense = expenses.stream()
                 .max(Comparator.comparing(Expense::amount));
-        expenseInsights.add(builder.id("mostExpense").value(maxExpense.map(Expense::amount).orElse(0.0))
+        expenseInsights.add(builder.id("mostExpense").amount(maxExpense.map(Expense::amount).orElse(0.0))
                 .category(maxExpense.map(Expense::category).map(Enum::toString).orElse("")).build());
 
         Optional<Expense> minExpense = expenses.stream()
                 .min(Comparator.comparing(Expense::amount));
-        expenseInsights.add(builder.id("leastExpense").value(minExpense.map(Expense::amount).orElse(0.0))
+        expenseInsights.add(builder.id("leastExpense").amount(minExpense.map(Expense::amount).orElse(0.0))
                 .category(minExpense.map(Expense::category).map(Enum::toString).orElse("")).build());
 
         return expenseInsights;
@@ -59,7 +60,7 @@ public class ExpenseService implements ExpenseTrackerUseCase {
     }
 
     public Expense createExpense(Expense expense) {
-       return expensePersistence.saveExpense(expense);
+        return expensePersistence.saveExpense(expense);
     }
 
     public Expense findExpense(Integer id) {
