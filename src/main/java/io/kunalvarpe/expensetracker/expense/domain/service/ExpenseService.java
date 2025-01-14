@@ -1,9 +1,9 @@
-package io.kunalvarpe.expensetracker.expense.app;
+package io.kunalvarpe.expensetracker.expense.domain.service;
 
-import io.kunalvarpe.expensetracker.expense.app.port.in.ExpenseTrackerUseCase;
-import io.kunalvarpe.expensetracker.expense.app.port.out.persistence.ExpensePersistence;
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
-import io.kunalvarpe.expensetracker.expense.domain.ExpenseInsight;
+import io.kunalvarpe.expensetracker.expense.domain.port.in.ExpenseTrackerUseCase;
+import io.kunalvarpe.expensetracker.expense.domain.port.out.persistence.ExpensePersistence;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.model.ExpenseInsight;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

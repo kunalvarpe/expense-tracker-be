@@ -1,6 +1,6 @@
 package io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres;
 
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
 import io.kunalvarpe.expensetracker.expense.infra.shared.LocalDateTimeMapper;
 import org.mapstruct.*;
 import org.springframework.stereotype.Component;

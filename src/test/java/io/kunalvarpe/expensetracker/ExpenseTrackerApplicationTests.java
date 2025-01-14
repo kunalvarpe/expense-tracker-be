@@ -1,6 +1,6 @@
 package io.kunalvarpe.expensetracker;
 
-import io.kunalvarpe.expensetracker.expense.domain.Category;
+import io.kunalvarpe.expensetracker.expense.domain.model.enums.Category;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseEntity;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseRepository;
 import org.junit.jupiter.api.AfterAll;
@@ -28,7 +28,7 @@ class ExpenseTrackerApplicationTests {
 
     @Container
     static PostgreSQLContainer<?> postgreSQLContainer =
-            new PostgreSQLContainer<>(DockerImageName.parse("postgres:alpine"));
+            new PostgreSQLContainer<>(DockerImageName.parse("postgres:14-alpine"));
 
     @BeforeAll
     static void beforeAll() {

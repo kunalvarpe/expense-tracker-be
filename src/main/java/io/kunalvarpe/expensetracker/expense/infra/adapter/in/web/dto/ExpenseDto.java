@@ -1,7 +1,7 @@
 package io.kunalvarpe.expensetracker.expense.infra.adapter.in.web.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import io.kunalvarpe.expensetracker.expense.domain.Category;
+import io.kunalvarpe.expensetracker.expense.domain.model.enums.Category;
 import lombok.Builder;
 
 import java.time.LocalDateTime;

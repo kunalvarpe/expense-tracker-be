@@ -1,4 +1,4 @@
-package io.kunalvarpe.expensetracker.expense.domain;
+package io.kunalvarpe.expensetracker.expense.domain.model.enums;
 
 public enum Category {
 	GROCERY,

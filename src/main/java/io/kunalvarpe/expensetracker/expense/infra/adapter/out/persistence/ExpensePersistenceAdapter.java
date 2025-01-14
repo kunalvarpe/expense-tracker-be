@@ -1,7 +1,7 @@
 package io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence;
 
-import io.kunalvarpe.expensetracker.expense.app.port.out.persistence.ExpensePersistence;
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.port.out.persistence.ExpensePersistence;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseEntity;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseEntityMapper;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres.ExpenseRepository;

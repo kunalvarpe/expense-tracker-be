@@ -1,6 +1,6 @@
-package io.kunalvarpe.expensetracker.expense.app.port.out.persistence;
+package io.kunalvarpe.expensetracker.expense.domain.port.out.persistence;
 
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,8 +1,8 @@
 package io.kunalvarpe.expensetracker.expense.infra.adapter.in.web;
 
-import io.kunalvarpe.expensetracker.expense.app.port.in.ExpenseTrackerUseCase;
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
-import io.kunalvarpe.expensetracker.expense.domain.ExpenseInsight;
+import io.kunalvarpe.expensetracker.expense.domain.port.in.ExpenseTrackerUseCase;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.model.ExpenseInsight;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.in.web.dto.CreateExpenseRequest;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.in.web.dto.ExpenseDto;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.in.web.dto.UpdateExpenseRequest;

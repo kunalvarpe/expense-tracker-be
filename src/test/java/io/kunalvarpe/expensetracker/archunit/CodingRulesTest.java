@@ -11,10 +11,7 @@ import static com.tngtech.archunit.core.domain.JavaClass.Predicates.simpleNameEn
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 import static com.tngtech.archunit.library.GeneralCodingRules.*;
 
-@AnalyzeClasses(
-        packages = ArchUnitConstants.APPLICATION_BASSE_PACAKGE,
-        importOptions = {ImportOption.DoNotIncludeTests.class}
-)
+@AnalyzeClasses(packages = ArchUnitConstants.APPLICATION_BASSE_PACAKGE, importOptions = ImportOption.DoNotIncludeTests.class)
 public class CodingRulesTest {
 
     @ArchTest

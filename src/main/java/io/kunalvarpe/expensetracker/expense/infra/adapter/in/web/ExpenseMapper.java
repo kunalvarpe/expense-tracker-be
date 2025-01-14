@@ -1,6 +1,6 @@
 package io.kunalvarpe.expensetracker.expense.infra.adapter.in.web;
 
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
 import io.kunalvarpe.expensetracker.expense.infra.shared.LocalDateTimeMapper;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.in.web.dto.CreateExpenseRequest;
 import io.kunalvarpe.expensetracker.expense.infra.adapter.in.web.dto.ExpenseDto;

@@ -1,5 +1,6 @@
-package io.kunalvarpe.expensetracker.expense.domain;
+package io.kunalvarpe.expensetracker.expense.domain.model;
 
+import io.kunalvarpe.expensetracker.expense.domain.model.enums.Category;
 import lombok.Builder;
 
 import java.time.LocalDateTime;

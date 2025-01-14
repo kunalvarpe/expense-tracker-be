@@ -1,6 +1,6 @@
 package io.kunalvarpe.expensetracker.expense.infra.adapter.out.persistence.postgres;
 
-import io.kunalvarpe.expensetracker.expense.domain.Category;
+import io.kunalvarpe.expensetracker.expense.domain.model.enums.Category;
 import io.kunalvarpe.expensetracker.expense.infra.shared.AuditableEntity;
 import lombok.Data;
 import lombok.ToString;

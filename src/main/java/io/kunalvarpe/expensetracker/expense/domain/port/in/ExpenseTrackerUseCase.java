@@ -1,7 +1,7 @@
-package io.kunalvarpe.expensetracker.expense.app.port.in;
+package io.kunalvarpe.expensetracker.expense.domain.port.in;
 
-import io.kunalvarpe.expensetracker.expense.domain.Expense;
-import io.kunalvarpe.expensetracker.expense.domain.ExpenseInsight;
+import io.kunalvarpe.expensetracker.expense.domain.model.Expense;
+import io.kunalvarpe.expensetracker.expense.domain.model.ExpenseInsight;
 
 import java.util.List;
 

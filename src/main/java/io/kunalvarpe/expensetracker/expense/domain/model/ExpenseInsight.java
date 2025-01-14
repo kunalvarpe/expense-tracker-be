@@ -1,4 +1,4 @@
-package io.kunalvarpe.expensetracker.expense.domain;
+package io.kunalvarpe.expensetracker.expense.domain.model;
 
 import lombok.Builder;
 
